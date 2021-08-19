@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+<head>
+<script src="https://ajaz.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<img src='http://192.168.8.100:8081/'>
+<div style="float:right">
+</div>
+
+<div style=" height:400px; width:300px; float:right;">
+<centre>
+<h1><span style="color:#5C5C5C;">Musyimi</span><span style="color:#5C5C5C">Tech</span></h1>
+<h2>Pi based Surveillance Bot</h2><br><br>
+<a href= '#' id='up' style='font-size:30px;text-decoration:none;'> &#x1F881;<br>FORWARD</a><br><br></centre>
+<a href='#' id='left' style='font-size:30px;text-decoration:none;'> &#x1F880;LEFT</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='#' id='right' style='font-size:30px;text-decoration:none;'> RIGHT &#x1F882;</a><br><br>
+<a href='#' id='down' style='font-size:30px;text-decoration:none;'> REVERSE<br> &#x1F883;</a></centre>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('#down').on('mousedown', function() {
+	$.get('/down_side');
+	}).on('mouseup', function() {
+	$.get('/stop');
+	}); 
+	$('#right').on('mousedown', function() {
+	$.get('/right_side');
+	}).on('mouseup', function() {
+	$.get('/stop');
+	});
+	$('#left').on('mousedown', function() {
+	$.get('/left_side');
+	}).on('mouseup', function() {
+	$.get('/stop');
+	});
+	$('#up').on('mousedown', function() {
+	$.get('/up_side');
+	}).on('mouseup', function() {
+	$.get('/stop');
+	});
+});
+</script>
+</body>
+
+
+</html>
